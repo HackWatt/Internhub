@@ -2,6 +2,8 @@
 
 The deployed website includes pre-filled sample credentials for easy login and testing purposes.
 
+https://intern-hub-frontend.vercel.app/
+
 # InternHub
 
 InternHub is a full-stack web application that serves as a portal for students and job seekers to apply for internships and for employers to post internship opportunities. The platform includes a user-friendly interface, secure authentication using JWT tokens, a review section for users to rate their internship experiences, and an integrated AI chatbot powered by Google Gemini AI to assist users with any queries.
