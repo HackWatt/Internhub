@@ -126,8 +126,8 @@ CLOUDINARY_CLIENT_SECRET
 
 
 
-![backend-pic](https://github.com/user-attachments/assets/7d210f52-b4e5-4621-b8cb-dc79826e1c4d)
 
+![backend-pic](https://github.com/user-attachments/assets/e3cf254c-a10b-41ab-88e1-08e59ecdc5ee)
 
 
 
