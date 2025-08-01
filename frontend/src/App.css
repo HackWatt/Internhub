@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 body{
-  background: #E4F6F8
+  background: #baf0f7
 }
 
 @keyframes bounce {
@@ -246,33 +246,120 @@ p {
     display: none;
   }
 }
+.footer {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 3rem 0 0;
+  font-family: 'Roboto', sans-serif;
+}
 
-.footerShow {
-  
-  background: #18191c;
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 120px;
-  align-items: center;
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
-.footerShow div {
-  display: flex;
-  gap: 12px;
-  font-size: 16px;
-  color: #f1f3f6;
+
+.footer-section {
+  margin-bottom: 2rem;
 }
-.footerShow div a {
-  font-size: 20px;
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #4f46e5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+  color: #e4f6f8;
   text-decoration: none;
-  color: #f1f3f6;
+  transition: color 0.3s ease;
 }
-.footerShow div a:hover {
-  color: #2d5649;
-  transform: scale(1.2);
-  transition: all 0.3s;
+
+.footer-section ul li a:hover {
+  color: #4f46e5;
 }
-.footerHide {
-  display: none;
+
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #4f46e5;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: rgba(7, 7, 7, 0.1);
+  margin-top: 2rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.heart-icon {
+  color: #ff6b6b;
+  margin: 0 0.2rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
 }
 @media (max-width: 830px) {
   .footerShow {
@@ -529,6 +616,42 @@ p {
     width: 100%;
   }
 }
+/* Add these styles to your existing CSS */
+
+.inputTag div {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  z-index: 2;
+}
+
+.password-toggle:hover {
+  color: #2d5649;
+}
+
+.lock-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+button[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Adjust the input padding to accommodate the icons */
+.inputTag input {
+  padding-right: 70px !important;
+}
 
 .categories {
   min-width: 1500px;
@@ -604,92 +727,165 @@ p {
 
 .companies {
   background: #D0E8EE;
-  padding: 50px 0;
+  padding: 5rem 0;
+  overflow: hidden;
 }
+
 .companies .container {
-  min-width: 1500px;
   max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 35px;
+  gap: 2.5rem;
+  padding: 0 1.25rem;
 }
+
+.companies .container h3 {
+  font-size: 2.5rem;
+  color: #2d5649;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
 .companies .container .banner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
   width: 100%;
-  padding: 20px 0;
+  padding: 1.25rem 0;
 }
+
 .companies .container .banner .card {
   width: 340px;
   display: flex;
   flex-direction: column;
   background: #fff;
-  padding: 20px;
-  gap: 15px;
+  padding: 1.5rem;
+  gap: 1rem;
   border-radius: 12px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: calc(var(--order) * 0.1s);
+  transition: all 0.3s ease;
 }
+
+.companies .container .banner .card:nth-child(1) { --order: 1; }
+.companies .container .banner .card:nth-child(2) { --order: 2; }
+.companies .container .banner .card:nth-child(3) { --order: 3; }
+
 .companies .container .banner .card:hover {
-  transition: all 0.3s;
-  box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
-  -webkit-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
-  -moz-box-shadow: 2px 10px 10px -1px rgba(0, 0, 0, 0.17);
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.12);
 }
+
 .companies .container .banner .card .content {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 1rem;
 }
+
 .companies .container .banner .card .content .icon {
-  padding: 10px;
-  font-size: 24px;
+  padding: 0.75rem;
+  font-size: 1.5rem;
   color: #2d5649;
-  background: rgb(233, 249, 255);
+  background: rgba(233, 249, 255, 0.8);
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  transition: all 0.3s ease;
 }
+
+.companies .container .banner .card:hover .content .icon {
+  transform: rotate(15deg) scale(1.1);
+  background: rgba(233, 249, 255, 1);
+}
+
 .companies .container .banner .card .content .text p:first-child {
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: #04eaf1;
 }
+
 .companies .container .banner .card .content .text p:last-child {
-  font-size: 15px;
-  color: gray;
+  font-size: 0.9375rem;
+  color: #666;
 }
+
 .companies .container .banner .card button {
   color: #2d5649;
-  background: rgb(233, 249, 255);
+  background: rgba(233, 249, 255, 0.8);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1.125rem;
   border: none;
-  padding: 7px 0;
-  margin-top: 10px;
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
-@media (max-width: 1520px) {
-  .companies .container {
-    min-width: 100%;
-    padding: 0 20px;
+
+.companies .container .banner .card button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: all 0.5s ease;
+}
+
+.companies .container .banner .card button:hover {
+  background: rgba(233, 249, 255, 1);
+  transform: translateY(-2px);
+}
+
+.companies .container .banner .card button:hover::before {
+  left: 100%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
 @media (max-width: 1100px) {
   .companies .container .banner {
     flex-direction: column;
-    gap: 30px;
     align-items: center;
+    gap: 1.5rem;
   }
+  
   .companies .container .banner .card {
     width: 420px;
+    animation-delay: calc(var(--order) * 0.05s) !important;
   }
 }
+
 @media (max-width: 470px) {
   .companies .container .banner .card {
     width: 100%;
   }
+  
+  .companies .container h3 {
+    font-size: 2rem;
+  }
 }
+
 .jobs {
   background: #E4F6F8;
   min-height: 100vh;
@@ -845,111 +1041,139 @@ p {
     min-width: 100%;
   }
 }
+
 .application {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #E4F6F8;
-  padding: 50px 20px;
-  min-height: 100vh; /* Ensure the section covers the full viewport height */
+  padding: 3rem 0;
+  min-height: 100vh;
+  background: #f5f7fa;
 }
 
 .application .container {
-  background: #D0E8EE; /* White background for the form */
-  padding: 40px; /* Increased padding */
-  border-radius: 15px; /* Rounder corners for the form */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for shadow */
-  max-width: 650px;
+  max-width: 800px;
   margin: 0 auto;
-  min-width: 550px;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.application .container:hover {
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-  transform: translateY(-5px); /* Slight lift on hover */
-}
-
-.application .container form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 30px; /* Increased gap between form sections */
-}
-
-.application .container form input,
-.application .container form textarea {
-  font-size: 18px; /* Adjusted font size */
-  padding: 12px; /* Increased padding */
-  width: 100%;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 10px; /* Rounder corners for inputs */
-}
-
-.application .container form textarea {
-  height: 200px;
-  resize: vertical; /* Allow vertical resizing */
-}
-.application .container h3{
-  margin-bottom: 30px;
-
-}
-
-.application .container form input:focus,
-.application .container form textarea:focus {
-  outline: none;
-  border-color: #2d5649; /* Change border color on focus */
-}
-
-.application .container form button {
-  background-color: #2d5649;
-  color: #ffffff;
-  font-size: 16px; /* Slightly smaller font size */
-  font-weight: 600;
-  padding: 12px 25px; /* Adjusted padding for a smaller button */
-  text-transform: uppercase;
-  letter-spacing: 1px; /* Adjusted letter spacing */
-  border: none;
-  border-radius: 10px; /* Rounder corners for button */
-  cursor: pointer;
-  transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
-
-.application .container form button:hover {
-  background-color: #1b3a27; /* Darker background on hover */
-}
-
-@media (max-width: 1520px) {
-  .application .container {
-    min-width: 100%;
-  }
-  .application .container form {
-    width: 100%;
-  }
-}
-.my_applications {
-  background: #E4F6F8;
-  padding: 50px 20px;
-  min-height: 885px;
-}
-
-.my_applications .container {
-  max-width: 1500px;
-  min-width: 1500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 35px;
-}
-
-/* Center the h1 */
-.my_applications .container h1 {
+.application h3 {
   text-align: center;
-  margin: 0 auto; /* Center align horizontally */
-  padding-bottom: 20px; /* Optional: add some space below the heading */
+  margin-bottom: 2rem;
+  color: #2d5649;
+  font-size: 1.8rem;
 }
+
+.application form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 15px;
+  color: #2d5649;
+  font-size: 1.2rem;
+}
+
+.application input,
+.application textarea {
+  width: 100%;
+  padding: 12px 15px 12px 45px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.application input:focus,
+.application textarea:focus {
+  outline: none;
+  border-color: #2d5649;
+  box-shadow: 0 0 0 2px rgba(45, 86, 73, 0.2);
+}
+
+.application textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.file-upload {
+  margin: 1rem 0;
+}
+
+.file-upload label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 12px 15px;
+  background: #f0f4f8;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.file-upload label:hover {
+  background: #e4ebf1;
+}
+
+.upload-icon {
+  color: #2d5649;
+  font-size: 1.2rem;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.file-info {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #f0f4f8;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.application button {
+  padding: 12px;
+  background: #2d5649;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.application button:hover {
+  background: #3a6b5a;
+}
+
+.application button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .application .container {
+    padding: 1.5rem;
+  }
+  
+  .application h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
 
 .job_seeker_card {
   display: flex;
@@ -1373,7 +1597,7 @@ p {
 nav {
 
 
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(218, 252, 249, 0.8);
   padding: 0px;
   height: 90px;
   
@@ -1382,7 +1606,7 @@ nav {
  {
   
 
-background-color: rgba(0, 0, 0, 0.2); /* Slightly darker with 70% opacity */
+background-color: rgba(250, 235, 235, 0.2); /* Slightly darker with 70% opacity */
   color: white; 
   padding: 0.1rem 1rem;
   display: flex;
@@ -1413,7 +1637,7 @@ nav .menu {
 nav .menu button {
   height: fit-content;
   padding: 7px;
-  border: 1px solid #184235;
+  border: 1px solid #dde7e4;
   color: #184235;;
   background: transparent;
   font-size: 20px;
@@ -1921,3 +2145,4 @@ h1 {
 
   text-align: center; /* Center text inside the box */
 }
+
